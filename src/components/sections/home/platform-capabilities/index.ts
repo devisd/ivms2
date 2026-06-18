@@ -1,0 +1,1 @@
+export { PlatformCapabilities } from './PlatformCapabilities'

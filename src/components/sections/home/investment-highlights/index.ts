@@ -1,0 +1,1 @@
+export { InvestmentHighlights } from './InvestmentHighlights'

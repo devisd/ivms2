@@ -1,0 +1,26 @@
+<svg
+  preserveAspectRatio="none"
+  viewBox="0 0 2372.6 1399.6"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+>
+  <g filter="url(#how-it-works-glow-blur)">
+    <ellipse cx="1186.3" cy="699.8" rx="1096" ry="609.5" fill="#00D4AA" fill-opacity="0.05" />
+  </g>
+  <defs>
+    <filter
+      id="how-it-works-glow-blur"
+      x="0"
+      y="0"
+      width="2372.6"
+      height="1399.6"
+      filterUnits="userSpaceOnUse"
+      color-interpolation-filters="sRGB"
+    >
+      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+      <feGaussianBlur stdDeviation="45.15" result="effect1_foregroundBlur" />
+    </filter>
+  </defs>
+</svg>

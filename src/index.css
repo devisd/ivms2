@@ -1,0 +1,31 @@
+@import 'tailwindcss';
+@import './styles/glass.css';
+
+@theme {
+  --color-navy: #0a1628;
+  --color-navy-deep: #0d2137;
+  --color-teal: #00d4aa;
+  --color-teal-dark: #057569;
+  --color-muted: #86909b;
+  --color-surface: #f4f6f8;
+  --color-card: #d7f2ef;
+  --color-card-blue: #dee7f4;
+  --font-sans: "Suisse Int'l", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  html::-webkit-scrollbar {
+    display: none;
+  }
+
+  body {
+    @apply bg-navy font-sans text-white antialiased;
+    overflow-x: hidden;
+  }
+}
