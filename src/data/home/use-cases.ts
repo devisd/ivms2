@@ -2,7 +2,7 @@ export type UseCase = {
   id: string
   title: string
   image: string
-  imageOffsetY?: number
+  imagePosition?: string
   overlay?: string
 }
 
@@ -12,11 +12,8 @@ export const USE_CASES_TITLE = 'Solutions For Every Case'
 
 export const USE_CASES_CARD_COUNT = 5
 
-/** Extra scroll steps after the last card transition (hold final frame) */
-export const USE_CASES_BUFFER_STEPS = 1
-
-/** Viewport heights of scroll per card step (5 steps ≈ 2.75vh total vs 5vh before) */
-export const USE_CASES_SCROLL_STEP_VH = 0.55
+/** Duration of one card rotation in the auto-slider (ms) */
+export const USE_CASES_CYCLE_DURATION_MS = 5_000
 
 export type DeckStackSlot = {
   top: number
@@ -79,14 +76,14 @@ export const USE_CASES: UseCase[] = [
     id: 'highways',
     title: 'Highways',
     image: '/images/use-cases/highways.png',
-    imageOffsetY: -397.75,
+    imagePosition: '50% 75%',
     overlay: 'rgba(10,22,40,0.5)',
   },
   {
     id: 'safety',
     title: 'Safety & Enforcement',
     image: '/images/use-cases/safety-enforcement.png',
-    overlay: '#0d2137',
+    overlay: 'rgba(10,22,40,0.5)',
   },
   {
     id: 'urban',

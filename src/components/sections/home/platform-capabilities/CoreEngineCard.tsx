@@ -44,7 +44,7 @@ export function CoreEngineCard({
     <motion.article
       data-core-engine-card={capability.id}
       className={cn(
-        'absolute z-[30] box-border flex flex-col overflow-hidden bg-[rgba(0,212,170,0.12)] opacity-[0.32] transition-[opacity,box-shadow] duration-300',
+        'absolute z-[30] box-border flex flex-col overflow-hidden bg-[rgba(0,212,170,0.12)] opacity-[0.32]',
         className,
       )}
       style={{
@@ -67,9 +67,31 @@ export function CoreEngineCard({
         boxShadow: `${borderShadow}, 0 0 ${scale(40, s)}px rgba(0, 212, 170, 0.18)`,
       }}
       transition={{
-        duration,
-        delay: reducedMotion ? 0 : delay,
-        ease: [0.22, 1, 0.36, 1],
+        x: {
+          duration,
+          delay: reducedMotion ? 0 : delay,
+          ease: [0.22, 1, 0.36, 1],
+        },
+        y: {
+          duration,
+          delay: reducedMotion ? 0 : delay,
+          ease: [0.22, 1, 0.36, 1],
+        },
+        scale: {
+          duration,
+          delay: reducedMotion ? 0 : delay,
+          ease: [0.22, 1, 0.36, 1],
+        },
+        opacity: {
+          duration: 0.2,
+          delay: 0,
+          ease: 'easeOut',
+        },
+        boxShadow: {
+          duration: 0.2,
+          delay: 0,
+          ease: 'easeOut',
+        },
       }}
     >
       <h3

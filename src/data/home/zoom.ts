@@ -23,7 +23,6 @@ export type ZoomTooltip = {
   x: number
   y: number
   box: { x: number; y: number; width: number }
-  line: { x: number; y: number; height: number }
   anchor: { x: number; y: number; size: number }
 }
 
@@ -34,7 +33,6 @@ export const ZOOM_TOOLTIPS: ZoomTooltip[] = [
     x: 585,
     y: 470,
     box: { x: 0, y: 0, width: 472 },
-    line: { x: 232, y: 132, height: 94 },
     anchor: { x: 191, y: 224, size: 85 },
   },
   {
@@ -43,7 +41,6 @@ export const ZOOM_TOOLTIPS: ZoomTooltip[] = [
     x: 320,
     y: 469,
     box: { x: 10, y: 0, width: 472 },
-    line: { x: 242, y: 135, height: 91 },
     anchor: { x: 173, y: 226, size: 138 },
   },
   {
@@ -52,7 +49,6 @@ export const ZOOM_TOOLTIPS: ZoomTooltip[] = [
     x: 379,
     y: 214,
     box: { x: 16, y: 12, width: 472 },
-    line: { x: 248, y: 144, height: 94 },
     anchor: { x: 192, y: 238, size: 113 },
   },
   {
@@ -65,7 +61,6 @@ export const ZOOM_TOOLTIPS: ZoomTooltip[] = [
     x: 1287,
     y: 243,
     box: { x: 0, y: 0, width: 391 },
-    line: { x: 210, y: 164, height: 94 },
     anchor: { x: 154, y: 258, size: 113 },
   },
   {
@@ -74,7 +69,6 @@ export const ZOOM_TOOLTIPS: ZoomTooltip[] = [
     x: 43,
     y: 114,
     box: { x: 0, y: 0, width: 391 },
-    line: { x: 194, y: 135, height: 94 },
     anchor: { x: 147, y: 229, size: 97 },
   },
   {
@@ -87,7 +81,6 @@ export const ZOOM_TOOLTIPS: ZoomTooltip[] = [
     x: -63,
     y: 281,
     box: { x: -12, y: 0, width: 415 },
-    line: { x: 194, y: 135, height: 94 },
     anchor: { x: 147, y: 229, size: 97 },
   },
 ]

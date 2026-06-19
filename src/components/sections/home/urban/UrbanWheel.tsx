@@ -14,17 +14,35 @@ import { UrbanWheelPod } from './UrbanWheelPod'
 
 const POD_COUNT = 4
 const STEP_ANGLE = 360 / POD_COUNT
+const POD_VISIBLE_ARC = 48
+const POD_FADE_ARC = 42
+
+function smoothstep(value: number) {
+  const t = Math.min(1, Math.max(0, value))
+  return t * t * (3 - 2 * t)
+}
+
+function getActiveIndex(rotation: number) {
+  const step = Math.floor((rotation + STEP_ANGLE / 2) / STEP_ANGLE) % POD_COUNT
+  return (POD_COUNT - step + POD_COUNT) % POD_COUNT
+}
+
+function getPodOpacity(rotation: number, index: number) {
+  const worldAngle = URBAN_ORBIT_FRONT_ANGLE + index * STEP_ANGLE + rotation
+  let diff = ((worldAngle - URBAN_ORBIT_FRONT_ANGLE) % 360 + 360) % 360
+  if (diff > 180) diff = 360 - diff
+
+  if (diff <= POD_VISIBLE_ARC) return 1
+  if (diff >= POD_VISIBLE_ARC + POD_FADE_ARC) return 0
+
+  return 1 - smoothstep((diff - POD_VISIBLE_ARC) / POD_FADE_ARC)
+}
 
 type UrbanWheelProps = {
   slides: UrbanSlide[]
   scale: number
   onActiveIndexChange: (index: number) => void
   className?: string
-}
-
-function getActiveIndex(rotation: number) {
-  const step = Math.floor((rotation + STEP_ANGLE / 2) / STEP_ANGLE) % POD_COUNT
-  return (POD_COUNT - step + POD_COUNT) % POD_COUNT
 }
 
 type PodItemProps = {
@@ -45,17 +63,19 @@ function PodItem({ slide, index, rotationRef }: PodItemProps) {
     const worldAngle = (worldAngleDeg * Math.PI) / 180
     const x = -Math.sin(worldAngle) * URBAN_ORBIT_RADIUS
     const y = -Math.cos(worldAngle) * URBAN_ORBIT_RADIUS
-    const visible = index === getActiveIndex(rotation)
+    const opacity = getPodOpacity(rotation, index)
 
     pod.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`
-    pod.style.opacity = visible ? '1' : '0'
+    pod.style.opacity = String(opacity)
+    pod.style.zIndex = String(Math.round(y))
+    pod.style.pointerEvents = opacity > 0.05 ? 'auto' : 'none'
   })
 
   return (
     <div
       ref={podRef}
       data-urban-pod
-      className="absolute left-0 top-0 will-change-transform"
+      className="absolute left-0 top-0 will-change-[transform,opacity]"
       style={{ width: URBAN_POD_SIZE, height: URBAN_POD_SIZE }}
     >
       <UrbanWheelPod image={slide.image} />
@@ -70,21 +90,15 @@ export function UrbanWheel({ slides, scale, onActiveIndexChange, className }: Ur
 
   useAnimationFrame((_, delta) => {
     if (shouldReduceMotion) return
+
     rotationRef.current += (360 / URBAN_ROTATION_PERIOD_MS) * delta
-  })
 
-  useEffect(() => {
-    if (shouldReduceMotion) return
-
-    const interval = window.setInterval(() => {
-      const nextIndex = getActiveIndex(rotationRef.current)
-      if (nextIndex === activeIndexRef.current) return
+    const nextIndex = getActiveIndex(rotationRef.current)
+    if (nextIndex !== activeIndexRef.current) {
       activeIndexRef.current = nextIndex
       onActiveIndexChange(nextIndex)
-    }, 120)
-
-    return () => window.clearInterval(interval)
-  }, [onActiveIndexChange, shouldReduceMotion])
+    }
+  })
 
   useEffect(() => {
     if (!shouldReduceMotion) return

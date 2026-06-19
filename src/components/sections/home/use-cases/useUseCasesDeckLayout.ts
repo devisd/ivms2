@@ -23,16 +23,26 @@ function easeInOutCubic(t: number) {
   return t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2
 }
 
+function resolveSlotMode(height: number): DeckStackSlot['mode'] {
+  const frontHeight = USE_CASES_DECK_STACK[0].height
+  const partialHeight = USE_CASES_DECK_STACK[1].height
+
+  if (height >= (frontHeight + partialHeight) / 2) return 'front'
+  if (height >= (partialHeight + USE_CASES_DECK_STACK[2].height) / 2) return 'partial'
+  return 'tab'
+}
+
 function interpolateSlot(from: number, to: number, t: number): DeckStackSlot {
   const a = USE_CASES_DECK_STACK[from]
   const b = USE_CASES_DECK_STACK[to]
+  const height = lerp(a.height, b.height, t)
 
   return {
     top: lerp(a.top, b.top, t),
     width: lerp(a.width, b.width, t),
-    height: lerp(a.height, b.height, t),
+    height,
     zIndex: Math.round(lerp(a.zIndex, b.zIndex, t)),
-    mode: t < 0.5 ? a.mode : b.mode,
+    mode: resolveSlotMode(height),
     background: t < 0.5 ? a.background : b.background,
     roundedBottom: t < 0.5 ? a.roundedBottom : b.roundedBottom,
   }

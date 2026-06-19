@@ -20,7 +20,7 @@ export function UrbanContent({ slide, className }: UrbanContentProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.45, ease: 'easeOut' }}
+          transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col gap-8 min-[1920px]:gap-[40px]"
         >
           <div className="flex flex-col gap-4 min-[1920px]:gap-[20px]">

@@ -1,9 +1,12 @@
+import { USE_CASES_DECK_STACK } from '@data/home/use-cases'
 import type { ResolvedDeckCard } from './useUseCasesDeckLayout'
 
 type UseCaseCardProps = {
   card: ResolvedDeckCard
   deckHeight: number
 }
+
+const PARTIAL_HEIGHT = USE_CASES_DECK_STACK[1].height
 
 export function UseCaseCard({ card, deckHeight }: UseCaseCardProps) {
   const { useCase, slot, titleOpacity, cardOpacity } = card
@@ -12,7 +15,7 @@ export function UseCaseCard({ card, deckHeight }: UseCaseCardProps) {
   const top = slot.top * deckHeight
   const width = `${slot.width * 100}%`
   const height = slot.height * scale
-  const showImage = slot.mode === 'front' || slot.mode === 'partial'
+  const showImage = slot.height >= PARTIAL_HEIGHT * 0.55
 
   return (
     <article
@@ -33,12 +36,8 @@ export function UseCaseCard({ card, deckHeight }: UseCaseCardProps) {
           <img
             src={useCase.image}
             alt=""
-            className="absolute left-0 w-full max-w-none object-cover"
-            style={{
-              top: useCase.imageOffsetY ? useCase.imageOffsetY * scale : 0,
-              height: slot.mode === 'front' ? 773.104 * scale : 585.875 * scale,
-              width: slot.mode === 'front' ? '100.9%' : '100%',
-            }}
+            className="absolute inset-0 h-full w-full object-cover"
+            style={{ objectPosition: useCase.imagePosition ?? 'center' }}
             draggable={false}
           />
           {useCase.overlay ? (
@@ -48,7 +47,7 @@ export function UseCaseCard({ card, deckHeight }: UseCaseCardProps) {
       ) : null}
 
       <div
-        className="absolute inset-0 flex items-center justify-center transition-opacity duration-200"
+        className="absolute inset-0 flex items-center justify-center"
         style={{ opacity: titleOpacity }}
       >
         <h3 className="text-center text-2xl text-teal min-[1920px]:text-[40px]">{useCase.title}</h3>
