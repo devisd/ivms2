@@ -14,7 +14,7 @@ export function Vision2030StatCard({ stat, index }: Vision2030StatCardProps) {
       viewport={{ once: true, amount: 0.45 }}
       transition={{ duration: 0.55, delay: index * 0.1, ease: 'easeOut' }}
       whileHover={{ y: -4, transition: { duration: 0.25 } }}
-      className="glass-surface glass-surface--blur-2 flex h-[180px] shrink-0 flex-col overflow-hidden rounded-[32px] bg-[rgba(13,33,55,0.2)] min-[1920px]:h-[197px] min-[1920px]:w-[406px]"
+      className="glass-surface glass-surface--blur-2 flex h-[180px] shrink-0 flex-col overflow-hidden rounded-[32px] min-[1920px]:h-[197px] min-[1920px]:w-[406px]"
     >
       <p className="flex h-[104px] shrink-0 items-start justify-center pt-8 text-3xl leading-none text-[#ff2121] min-[1920px]:h-[104px] min-[1920px]:pt-8 min-[1920px]:text-[40px]">
         {stat.value}
@@ -22,7 +22,7 @@ export function Vision2030StatCard({ stat, index }: Vision2030StatCardProps) {
 
       <div className="relative flex h-[84px] shrink-0 items-center justify-center overflow-hidden rounded-t-[32px] px-4 min-[1920px]:h-[93px]">
         <div
-          className="glass-surface glass-surface--blur-16 pointer-events-none absolute inset-0 rounded-[inherit] bg-white/5"
+          className="glass-surface glass-surface--stat-footer glass-surface--blur-16 pointer-events-none absolute inset-0 rounded-[inherit]"
           aria-hidden
         />
         <p className="relative z-10 text-center text-base text-white min-[1920px]:text-2xl">{stat.label}</p>

@@ -1,0 +1,5 @@
+/* Unlayered override: Tailwind/Lightning CSS drops unprefixed backdrop-filter in production */
+.glass-surface {
+  -webkit-backdrop-filter: blur(var(--glass-blur, 8px));
+  backdrop-filter: blur(var(--glass-blur, 8px));
+}

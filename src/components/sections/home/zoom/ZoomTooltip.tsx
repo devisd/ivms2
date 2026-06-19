@@ -65,11 +65,10 @@ export function ZoomTooltip({ tooltip, scale, motion }: ZoomTooltipProps) {
   return (
     <div
       ref={rootRef}
-      className="pointer-events-none absolute isolate will-change-transform"
+      className="pointer-events-none absolute will-change-[top,left]"
       style={{
         left: tooltip.x * scale,
-        top: tooltip.y * scale,
-        transform: `translateY(${translateY * scale}px)`,
+        top: tooltip.y * scale + translateY * scale,
       }}
     >
       <img
@@ -108,14 +107,17 @@ export function ZoomTooltip({ tooltip, scale, motion }: ZoomTooltipProps) {
           marginLeft: tooltip.box.x * scale,
           marginTop: tooltip.box.y * scale,
           width: tooltip.box.width * scale,
-          opacity,
         }}
       >
         <div
           className="glass-surface glass-surface--tooltip glass-surface--blur-16 pointer-events-none absolute inset-0 rounded-[inherit]"
+          style={{ opacity }}
           aria-hidden
         />
-        <div className="relative z-10 text-center text-sm text-white min-[1280px]:text-lg min-[1920px]:text-2xl">
+        <div
+          className="relative z-10 text-center text-sm text-white min-[1280px]:text-lg min-[1920px]:text-2xl"
+          style={{ opacity }}
+        >
           {tooltip.lines.map((line) => (
             <p key={line} className="leading-normal">
               {line}

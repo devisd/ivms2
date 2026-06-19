@@ -4,8 +4,8 @@
     isolation: isolate;
     overflow: hidden;
     --glass-blur: 8px;
-    backdrop-filter: blur(var(--glass-blur));
     -webkit-backdrop-filter: blur(var(--glass-blur));
+    backdrop-filter: blur(var(--glass-blur));
     border: 1px solid rgba(255, 255, 255, 0.05);
     background:
       linear-gradient(125deg,
@@ -65,6 +65,12 @@
     border-color: transparent;
   }
 
+  .glass-surface--stat-footer {
+    --glass-fill: rgba(255, 255, 255, 0.05);
+    border-color: transparent;
+    box-shadow: none;
+  }
+
   .glass-surface--teal::before,
   .glass-surface--outline::before {
     background: linear-gradient(135deg,
@@ -118,7 +124,7 @@
     pointer-events: none;
   }
 
-  .glass-surface>* {
+  .glass-surface > * {
     position: relative;
     z-index: 1;
   }
