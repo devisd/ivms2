@@ -9,12 +9,18 @@ export function HeroScrollIndicator() {
     <button
       type="button"
       onClick={reveal}
-      className="flex flex-col items-center gap-3 pb-2 min-[1920px]:gap-4 min-[1920px]:pb-0"
+      className="flex flex-col items-center gap-4"
       aria-label={HERO_SCROLL_INDICATOR.label}
     >
-        <p className="text-xs uppercase tracking-[0.1em] text-white/50 min-[1280px]:text-sm min-[1920px]:text-2xl min-[1920px]:tracking-[2.4px]">
-          Scroll to explore
-        </p>
+      <span
+        className="text-center uppercase text-white/50"
+        style={{
+          fontSize: 24,
+          letterSpacing: 2.4,
+        }}
+      >
+        Scroll to explore
+      </span>
       <motion.div
         aria-hidden
         className="rounded-full"

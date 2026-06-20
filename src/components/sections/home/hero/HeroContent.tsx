@@ -1,7 +1,14 @@
 import { motion } from 'framer-motion'
 import { useHeroIntro } from '@context/useHeroIntro'
-import { HERO_SUBTITLE, HERO_TITLE } from '@data/home/hero'
+import { HERO_SUBTITLE_LINE_1, HERO_SUBTITLE_LINE_2, HERO_TITLE_ACCENT, HERO_TITLE_LINE_1 } from '@data/home/hero'
+import { HERO_DESIGN } from '@data/home/hero-design'
 import { Button } from '@components/ui/Button'
+import { HeroStats } from './HeroStats'
+
+const { contentLeft, title, connector, subtitle, statsLine, buttons } = HERO_DESIGN
+
+const heroButtonClass =
+  'h-[56px] w-[358px] rounded-[20px] px-6 py-4 text-[20px] uppercase leading-normal tracking-normal'
 
 export function HeroContent() {
   const { isHeroChromeVisible, phase } = useHeroIntro()
@@ -9,43 +16,110 @@ export function HeroContent() {
 
   return (
     <motion.div
-      className="flex w-full flex-col items-center px-6 pt-[clamp(2rem,7.8125vw,150px)] text-center min-[1280px]:px-10 min-[1440px]:px-12 min-[1920px]:px-[68px]"
+      className="relative h-full w-full"
       initial={false}
       animate={{ opacity: showContent ? 1 : 0 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
     >
-      <div className="flex w-full max-w-[1784px] flex-col items-center gap-6 min-[1920px]:gap-6">
-        <h1 className="w-full text-[clamp(2.75rem,8.85vw,10.625rem)] leading-none text-white">
-          {HERO_TITLE}
-        </h1>
+      <h1
+        className="absolute font-normal not-italic uppercase [word-break:break-word] text-white"
+        style={{
+          left: contentLeft,
+          top: title.top,
+          width: title.width,
+          fontSize: title.fontSize,
+          letterSpacing: `${title.letterSpacing}px`,
+          lineHeight: title.lineHeight,
+        }}
+      >
+        <span className="block">{HERO_TITLE_LINE_1}</span>
+        <span className="block">
+          System for <span className="text-teal">{HERO_TITLE_ACCENT}</span>
+        </span>
+      </h1>
 
-        <p className="max-w-[1077px] text-lg leading-normal text-white min-[1280px]:text-2xl min-[1440px]:text-3xl min-[1920px]:text-[40px]">
-          {HERO_SUBTITLE}
-        </p>
+      <img
+        src="/images/hero/connector-line.svg"
+        alt=""
+        aria-hidden
+        className="pointer-events-none absolute max-w-none"
+        style={{
+          left: contentLeft,
+          top: connector.top,
+          width: connector.width,
+          height: connector.height,
+        }}
+      />
 
-        <motion.div
-          className="flex flex-wrap items-center justify-center gap-4 pt-2 min-[1920px]:gap-6 min-[1920px]:pt-[28px]"
-          initial={false}
-          animate={{
-            opacity: isHeroChromeVisible ? 1 : 0,
-            y: isHeroChromeVisible ? 0 : 20,
-          }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+      <p
+        className="absolute text-left leading-normal text-white"
+        style={{
+          left: contentLeft,
+          top: subtitle.top,
+          width: subtitle.width,
+          fontSize: subtitle.fontSize,
+        }}
+      >
+        <span className="block">{HERO_SUBTITLE_LINE_1}</span>
+        <span className="block">{HERO_SUBTITLE_LINE_2}</span>
+      </p>
+
+      <HeroStats />
+
+      <motion.img
+        src="/images/hero/stats-line.svg"
+        alt=""
+        aria-hidden
+        className="pointer-events-none absolute max-w-none"
+        style={{
+          left: contentLeft,
+          top: statsLine.top,
+          width: statsLine.width,
+          height: statsLine.height,
+        }}
+        initial={false}
+        animate={{
+          opacity: isHeroChromeVisible ? 1 : 0,
+          y: isHeroChromeVisible ? 0 : 24,
+        }}
+        transition={{ duration: 0.55, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+      />
+
+      <motion.div
+        className="absolute -translate-x-1/2"
+        style={{ left: buttons.primaryCenterX, top: buttons.top }}
+        initial={false}
+        animate={{
+          opacity: isHeroChromeVisible ? 1 : 0,
+          y: isHeroChromeVisible ? 0 : 20,
+        }}
+        transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <Button
+          variant="glass"
+          className={`${heroButtonClass} whitespace-nowrap ${isHeroChromeVisible ? '' : 'pointer-events-none'}`}
         >
-          <Button
-            variant="glass"
-            className={`min-w-[280px] text-white min-[1920px]:min-w-[358px] ${isHeroChromeVisible ? '' : 'pointer-events-none'}`}
-          >
-            Request investor materials
-          </Button>
-          <Button
-            variant="glass-outline"
-            className={`min-w-[240px] text-white min-[1920px]:min-w-[292px] ${isHeroChromeVisible ? '' : 'pointer-events-none'}`}
-          >
-            Explore the platform
-          </Button>
-        </motion.div>
-      </div>
+          investor materials
+        </Button>
+      </motion.div>
+
+      <motion.div
+        className="absolute -translate-x-1/2"
+        style={{ left: buttons.secondaryCenterX, top: buttons.top }}
+        initial={false}
+        animate={{
+          opacity: isHeroChromeVisible ? 1 : 0,
+          y: isHeroChromeVisible ? 0 : 20,
+        }}
+        transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <Button
+          variant="glass-outline"
+          className={`${heroButtonClass} ${isHeroChromeVisible ? '' : 'pointer-events-none'}`}
+        >
+          Request a demo
+        </Button>
+      </motion.div>
     </motion.div>
   )
 }

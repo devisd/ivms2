@@ -1,44 +1,52 @@
 import { motion } from 'framer-motion'
-import { Container } from '@components/layout/Container'
+import {
+  HERO_DESIGN,
+  getHeroScrollIndicatorLeft,
+  getHeroScrollIndicatorTop,
+} from '@data/home/hero-design'
 import { useHeroIntro } from '@context/useHeroIntro'
 import { HeroBackground } from './HeroBackground'
 import { HeroContent } from './HeroContent'
+import { HeroHotspots } from './HeroHotspots'
 import { HeroIntroOverlay } from './HeroIntroOverlay'
 import { HeroScrollIndicator } from './HeroScrollIndicator'
-import { HeroStats } from './HeroStats'
+import { useHeroLayout } from './useHeroLayout'
 
 export function Hero() {
-  const { isScrollIndicatorVisible, isHeroChromeVisible } = useHeroIntro()
+  const { isScrollIndicatorVisible } = useHeroIntro()
+  const { scale, offsetX, offsetY } = useHeroLayout()
 
   return (
     <>
       <HeroIntroOverlay />
 
-      <section
-        data-header-theme="dark"
-        className="relative flex min-h-screen flex-col overflow-hidden min-[1920px]:h-[1080px] min-[1920px]:min-h-0"
-      >
-        <HeroBackground />
-
-        <div className="relative z-10 flex min-h-screen flex-col min-[1920px]:min-h-[1080px]">
+      <section className="relative h-screen overflow-hidden bg-navy">
+        <div
+          className="absolute origin-top-left will-change-transform"
+          style={{
+            width: HERO_DESIGN.width,
+            height: HERO_DESIGN.height,
+            transform: `translate(${offsetX}px, ${offsetY}px) scale(${scale})`,
+          }}
+        >
+          <HeroBackground />
           <HeroContent />
+          <HeroHotspots />
 
-          <div className="flex-1" aria-hidden />
-
-          <Container className="flex flex-col items-center gap-8 pb-16 min-[1920px]:gap-0 min-[1920px]:pb-[70px]">
-            {isHeroChromeVisible ? <HeroStats /> : null}
-
-            {isScrollIndicatorVisible ? (
-              <motion.div
-                className="-translate-y-8 min-[1920px]:-translate-y-[150px]"
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45, ease: 'easeOut' }}
-              >
-                <HeroScrollIndicator />
-              </motion.div>
-            ) : null}
-          </Container>
+          {isScrollIndicatorVisible ? (
+            <motion.div
+              className="absolute z-10 -translate-x-1/2"
+              style={{
+                left: getHeroScrollIndicatorLeft(),
+                top: getHeroScrollIndicatorTop(),
+              }}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, ease: 'easeOut' }}
+            >
+              <HeroScrollIndicator />
+            </motion.div>
+          ) : null}
         </div>
       </section>
     </>

@@ -8,7 +8,11 @@ import { InvestmentHighlightsGrid } from './InvestmentHighlightsGrid'
 
 export function InvestmentHighlights() {
   return (
-    <section data-header-theme="dark" className="relative overflow-hidden bg-navy py-16 min-[1920px]:h-[1078px] min-[1920px]:py-0">
+    <section
+      id="investment-highlights"
+      data-header-theme="dark"
+      className="relative overflow-hidden bg-navy py-16 min-[1920px]:h-[1078px] min-[1920px]:py-0"
+    >
       <InvestmentHighlightsBackground />
 
       <Container className="relative z-10 flex flex-col gap-10 pt-8 min-[1920px]:gap-[81px] min-[1920px]:pt-[136px]">

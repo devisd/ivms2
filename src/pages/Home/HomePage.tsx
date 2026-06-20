@@ -15,7 +15,6 @@ import {
   UrbanSection,
   UseCasesSection,
   Vision2030,
-  ZoomSection,
 } from '@components/sections/home'
 
 export function HomePage() {
@@ -24,7 +23,6 @@ export function HomePage() {
       <main className="min-h-screen">
         <SiteHeader />
         <Hero />
-        <ZoomSection />
         <InvestmentHighlights />
         <TrustedSection />
         <UrbanSection />

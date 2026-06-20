@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion'
 import { useHeaderTheme } from '@lib/useHeaderTheme'
-import { useHeroIntro } from '@context/useHeroIntro'
+import { useHeaderVisibility } from '@lib/useHeaderVisibility'
 import { Header } from './Header'
 
 export function SiteHeader() {
   const variant = useHeaderTheme()
-  const { isHeaderVisible } = useHeroIntro()
+  const isHeaderVisible = useHeaderVisibility()
 
   return (
     <motion.div
@@ -19,6 +19,7 @@ export function SiteHeader() {
     >
       <Header
         variant={variant}
+        minimal
         className={isHeaderVisible ? '' : 'pointer-events-none'}
       />
     </motion.div>

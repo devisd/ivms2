@@ -1,5 +1,4 @@
 export { Hero } from './hero'
-export { ZoomSection } from './zoom'
 export { InvestmentHighlights } from './investment-highlights'
 export { TrustedSection } from './trusted'
 export { UrbanSection } from './urban'

@@ -6,9 +6,10 @@ import { Container } from './Container'
 type HeaderProps = {
   variant?: 'dark' | 'light'
   className?: string
+  minimal?: boolean
 }
 
-export function Header({ variant = 'dark', className }: HeaderProps) {
+export function Header({ variant = 'dark', className, minimal = true }: HeaderProps) {
   const isDark = variant === 'dark'
 
   return (
@@ -29,7 +30,12 @@ export function Header({ variant = 'dark', className }: HeaderProps) {
           IVMS
         </a>
 
-        <nav className="hidden min-[1280px]:flex min-[1280px]:flex-1 min-[1280px]:justify-center">
+        <nav
+          className={cn(
+            'hidden min-[1280px]:flex min-[1280px]:flex-1 min-[1280px]:justify-center',
+            minimal && 'invisible pointer-events-none',
+          )}
+        >
           <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 min-[1440px]:gap-x-8 min-[1920px]:gap-x-[32px]">
             {NAV_LINKS.map((link) => (
               <li key={link}>
