@@ -15,8 +15,8 @@ export function HeroHotspots() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
     >
-      {HERO_HOTSPOTS.map((hotspot) => (
-        <HeroHotspot key={hotspot.id} hotspot={hotspot} />
+      {HERO_HOTSPOTS.map((hotspot, index) => (
+        <HeroHotspot key={hotspot.id} hotspot={hotspot} pulseIndex={index} />
       ))}
     </motion.div>
   )
