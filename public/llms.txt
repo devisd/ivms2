@@ -1,0 +1,14 @@
+# iVMS
+
+> The operating system for national mobility — AI fleet, automated enforcement, and integrated payments for governments and enterprises. 7,000+ vehicles live across UAE and enterprise deployments.
+
+iVMS Group · Dubai, UAE · https://ivms.io/
+
+## Full site summary
+
+- [Extended content for AI indexing](https://ivms.io/llms-full.txt)
+
+## Optional
+
+- [Sitemap](https://ivms.io/sitemap.xml)
+- [Robots](https://ivms.io/robots.txt)

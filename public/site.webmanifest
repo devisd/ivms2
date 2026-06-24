@@ -1,0 +1,19 @@
+{
+  "name": "iVMS — The Operating System for National Mobility",
+  "short_name": "iVMS",
+  "description": "AI fleet, automated enforcement and integrated payments platform for governments and enterprises.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0a1628",
+  "theme_color": "#0a1628",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any"
+    }
+  ]
+}

@@ -75,32 +75,32 @@ export const USE_CASES: UseCase[] = [
   {
     id: 'highways',
     title: 'Highways',
-    image: '/images/use-cases/highways.png',
+    image: '/images/use-cases/highways.webp',
     imagePosition: '50% 75%',
     overlay: 'rgba(10,22,40,0.5)',
   },
   {
     id: 'safety',
     title: 'Safety & Enforcement',
-    image: '/images/use-cases/safety-enforcement.png',
+    image: '/images/use-cases/safety-enforcement.webp',
     overlay: 'rgba(10,22,40,0.5)',
   },
   {
     id: 'urban',
     title: 'Urban Mobility',
-    image: '/images/use-cases/urban-mobility.png',
+    image: '/images/use-cases/urban-mobility.webp',
     overlay: 'rgba(10,22,40,0.55)',
   },
   {
     id: 'fleet',
     title: 'Fleet Operations',
-    image: '/images/use-cases/fleet-operations.png',
+    image: '/images/use-cases/fleet-operations.webp',
     overlay: 'rgba(10,22,40,0.55)',
   },
   {
     id: 'transit',
     title: 'Public Transit',
-    image: '/images/use-cases/public-transit.png',
+    image: '/images/use-cases/public-transit.webp',
     overlay: 'rgba(10,22,40,0.55)',
   },
 ]

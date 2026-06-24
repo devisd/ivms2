@@ -1,0 +1,204 @@
+# iVMS — Full site summary for AI indexing
+
+> Innovative Vehicle Management Solutions (iVMS) is the operating system for national mobility: an AI fleet, automated enforcement, and integrated payments platform for governments and enterprise operators.
+
+- **Website:** https://ivms.io/
+- **Company:** iVMS Group, Dubai, UAE
+- **Tagline:** The Operating System for National Mobility
+- **Primary market:** Sovereign transport authorities, national mobility programmes, enterprise fleets
+- **Scale:** 7,000+ vehicles under active management; 150+ specialists; 25+ country expansion pipeline
+
+---
+
+## Hero — value proposition
+
+**Headline:** The Operating System for National Mobility
+
+**Summary:** AI fleet, automated enforcement and integrated payments platform. 7,000+ vehicles live across UAE and enterprise.
+
+**Key stats:**
+- 150+ specialists
+- 25+ countries
+- 2 sovereign anchor clients
+
+**Live platform examples (hero hotspots):**
+- Student transport: student boarding verified, parent notified, cabin climate monitored
+- Driver safety: fatigue detection, SOS one-tap, biometric ignition
+- Identity & access: driver face match, unauthorized ignition blocked, zonal fare calculation
+- Fleet operations: 7,000+ vehicles live, driver scoring, fuel efficiency vs baseline
+- Enforcement: speed violation capture, automatic fine deduction, fleet-wide violation reduction
+
+---
+
+## Investment highlights
+
+| Metric | Detail |
+| --- | --- |
+| 7,000+ | Vehicles under active management |
+| 2 | Sovereign-grade operational anchors (RTA Dubai · ITC Abu Dhabi / Talabat) |
+| 150+ | Specialists in AI/ML, IoT, cloud, cybersecurity, payments |
+| 25 | Country expansion pipeline across 4 regions |
+| 4 | Compliance jurisdictions (UAE PDPL · UK GDPR · OSHA · ISO 27001-aligned) |
+| End to end | Vertically integrated: hardware, connectivity, software, install, payments |
+| 340–854% | Modelled customer 5-year ROI (reference 100-vehicle fleet) |
+| 2.1–6 mo | Modelled customer payback |
+
+---
+
+## Trusted partners
+
+### Operational anchors
+- **RTA Dubai** — Active operational relationship, fleet management & compliance
+- **UDrive (Dubai)** — Smart Asset Management proposal (in proposal)
+- **ITC Abu Dhabi** — Fleet safety & rider-behaviour compliance for Talabat delivery; drone road-safety PoC in deployment
+
+### Direct supply chain
+- **1Global** — Multi-network SIM connectivity on every device
+- **Teltonika** — Telematics hardware, manufacturer pricing + firmware control
+
+---
+
+## Urban mobility challenges
+
+**Section:** From Urban Chaos to Intelligent Control
+
+1. **Road Congestion → Intelligent Flow Control** — Real-time traffic optimization reduces commute times by 15–20% and eliminates bottlenecks through predictive routing. Stat: 28B+ SAR annual congestion cost in KSA.
+2. **Road Fatalities → Predictive Safety** — Stat: 6,800+ road deaths per year in KSA.
+3. **Revenue Leakage → Automated Collection** — Smart toll zones and digital enforcement increase payment collection rates by 20–25% with zero physical infrastructure. Stat: 42.4B SAR government transport spending.
+4. **Data Silos → Unified Platform** — One platform connects cameras, sensors, GPS, payments, and IoT into a single source of truth. Stat: 19% of KSA CO₂ from transport.
+
+---
+
+## How it works — data to action
+
+1. **Data Collection** — Cameras, sensors, GPS, IoT devices, transactions
+2. **Analytics & AI** — Real-time processing, pattern recognition, predictions
+3. **Actions** — Automated enforcement, traffic signals, alerts
+4. **Reporting** — Dashboards, compliance reports, stakeholder insights
+
+---
+
+## Core engine — platform capabilities
+
+**The iVMS Core Engine** — 11 capability clusters in one platform.
+
+| Module | Description | Capabilities |
+| --- | --- | --- |
+| Analytics | AI traffic prediction, congestion modelling, incident probability scoring | Predictive models, pattern detection, anomaly alerts, trend analysis |
+| Telemetry | Real-time tracking, speed & behavioural analytics across fleets | GPS tracking, OBD-II integration, real-time streaming, edge processing |
+| Enforcement | Automated violation detection, digital evidence, judicial integration | Speed detection, red-light cameras, LPR, evidence chain |
+| Payments | Toll collection, fine processing, revenue reconciliation (iPAY) | iPAY integration, tap-to-pay, QR payments, auto-reconciliation |
+| Reporting | Customizable dashboards, compliance reports, operational visibility | Live dashboards, scheduled reports, data export, KPI tracking |
+
+---
+
+## Products — vertical-complete solutions
+
+| Product | Description |
+| --- | --- |
+| iVMS Fleet Platform | Unified fleet management, 11 capability clusters in one dashboard |
+| iTaxi | Taxi & ride-hail: driver scoring, payroll, zonal fare, licence reminders |
+| iBUS | School transport: student verification, boarding alerts, parent invoicing |
+| iDeliver / Smart Bikers | Last-mile & motorcycle compliance — live under ITC Abu Dhabi (Talabat) |
+| SpeedSense | Automated traffic-fine interception & recovery for state enforcement |
+| Data iPAY / ZashX | Tap-to-pay wallet, WPS salary disbursement, fines, remittances |
+
+---
+
+## Proprietary IP & R&D
+
+**Hardware + software, co-engineered.**
+
+| Innovation | Description |
+| --- | --- |
+| Sleeper Tracker | Secondary tracker activated only when the primary one is opened |
+| iGUARD | Hidden engine locker via OEM button code sequence (up to 20 clicks); no external fob; changing code |
+| AI accident-liability determination | Automatic fault detection with timestamped video, GPS and sensor evidence |
+
+**Additional R&D:** AI parts-life prediction · driver vital-signs & fatigue monitoring · Live Voice AI Driver Assistant.
+
+---
+
+## Use cases
+
+- Highways
+- Safety & Enforcement
+- Urban Mobility
+- Fleet Operations
+- Public Transit
+
+---
+
+## Trust & compliance
+
+- **GDPR** — Full data protection and privacy governance
+- **ISO 27001** — Information security management certified
+- **WCAG 2.1** — Accessible to all users
+- **Thatcham Accredited** — Independently tested vehicle security
+- **Shariah-compliant** governance framework
+
+---
+
+## Vision 2030 alignment
+
+iVMS directly addresses the Kingdom's critical transportation challenges and national infrastructure strategy.
+
+| Challenge | Scale |
+| --- | --- |
+| Vehicle thefts (2023) | 23,000+ |
+| Road fatalities per year | 6,800+ |
+| Annual transport CO₂ | 155M tons |
+| Environmental damage cost | 116B SAR |
+
+---
+
+## Government revenue model — self-funding deployments
+
+1. **Zero up-front infrastructure** — Deployed on existing networks and vehicles; no state capex required.
+2. **Self-funding from day one** — Revenue from automatic fines (SpeedSense), virtual tolling, and digital wallet (iPay).
+3. **Formalising informal economies** — Motorcycle taxis, unbanked drivers, and manual fine collection drawn into the tax base with greater financial inclusion.
+
+Each new sovereign deployment is paid for by the cash it generates.
+
+---
+
+## Calls to action
+
+- Request a demo (header)
+- Request investor materials (hero, CTA)
+- Request a demo / Explore the platform (hero)
+- Book a technical session (CTA)
+- 11 capability clusters — see the full platform (core engine)
+
+**CTA copy:** Schedule a technical session with our team. See how iVMS can be configured for your city, highway network, or national deployment.
+
+---
+
+## Site navigation (footer)
+
+**Platform:** Technology, Solutions, Projects, R&D, Partners
+
+**Trust:** Standards, Trust Center, Data Governance, Accessibility
+
+**Company:** About, Newsroom, Careers, Knowledge, Contact
+
+**Legal:** IPO & Shares, Privacy Policy, Terms of Service, Status & Reliability
+
+---
+
+## Company description
+
+Innovative Vehicle Management Solutions. City-scale intelligent transportation infrastructure for governments and enterprises.
+
+© iVMS Group, Dubai, UAE
+
+---
+
+## Machine-readable resources
+
+- Short summary: https://ivms.io/llms.txt
+- This file: https://ivms.io/llms-full.txt
+- Sitemap: https://ivms.io/sitemap.xml
+- Robots: https://ivms.io/robots.txt
+
+*Last updated: 2026. Content reflects the public marketing site at https://ivms.io/.*

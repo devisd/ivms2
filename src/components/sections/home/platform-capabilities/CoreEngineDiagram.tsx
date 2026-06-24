@@ -70,7 +70,7 @@ function CoreEngineDiagramContent() {
       >
         <img
           data-core-engine-image
-          src="/images/core-engine/engine.png"
+          src="/images/core-engine/engine.webp"
           alt=""
           className="absolute max-w-none"
           style={{

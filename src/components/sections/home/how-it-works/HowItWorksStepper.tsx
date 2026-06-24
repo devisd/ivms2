@@ -46,19 +46,19 @@ function HowItWorksStepNode({ number, isLit, isCurrent }: HowItWorksStepNodeProp
 
 type HowItWorksStepperProps = {
   steps: HowItWorksStep[]
-  completedSegments: number
   segmentFills: number[]
+  litStepCount: number
 }
 
-export function HowItWorksStepper({ steps, completedSegments, segmentFills }: HowItWorksStepperProps) {
+export function HowItWorksStepper({ steps, segmentFills, litStepCount }: HowItWorksStepperProps) {
   return (
     <div className="mx-auto flex w-full max-w-[1396px] items-center">
       {steps.map((step, index) => (
         <Fragment key={step.number}>
           <HowItWorksStepNode
             number={step.number}
-            isLit={index <= completedSegments}
-            isCurrent={index === completedSegments}
+            isLit={index < litStepCount}
+            isCurrent={index === litStepCount - 1}
           />
           {index < steps.length - 1 ? (
             <HowItWorksProgressSegment fill={segmentFills[index] ?? 0} />

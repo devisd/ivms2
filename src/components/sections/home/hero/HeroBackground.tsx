@@ -14,7 +14,7 @@ export function HeroBackground() {
         }}
       >
         <img
-          src="/images/hero/bg.jpg"
+          src="/images/hero/bg.webp"
           alt=""
           className="absolute top-[-20.74%] left-0 h-[156.23%] w-[140.92%] max-w-none object-cover"
         />
@@ -39,7 +39,7 @@ export function HeroBackground() {
           }}
         >
           <img
-            src="/images/hero/nano-city.png"
+            src="/images/hero/nano-city.webp"
             alt=""
             className="h-full w-full max-w-none object-contain"
             draggable={false}

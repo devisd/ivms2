@@ -6,7 +6,7 @@ export function Vision2030Background({ className }: Vision2030BackgroundProps) {
   return (
     <div className={`pointer-events-none absolute inset-0 ${className ?? ''}`} aria-hidden>
       <img
-        src="/images/vision-2030/background.png"
+        src="/images/vision-2030/background.webp"
         alt=""
         className="h-full w-full object-cover"
       />

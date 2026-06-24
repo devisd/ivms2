@@ -15,7 +15,7 @@ import { useHowItWorksScroll } from './useHowItWorksScroll'
 export function HowItWorks() {
   const sectionRef = useRef<HTMLElement>(null)
   const pinRef = useRef<HTMLDivElement>(null)
-  const { completedSegments, segmentFills, litStepCount } = useHowItWorksScroll({
+  const { segmentFills, litStepCount } = useHowItWorksScroll({
     sectionRef,
     pinRef,
     stepCount: HOW_IT_WORKS_STEPS.length,
@@ -33,8 +33,8 @@ export function HowItWorks() {
           <div className="flex flex-col gap-8 min-[1920px]:gap-[50px]">
             <HowItWorksStepper
               steps={HOW_IT_WORKS_STEPS}
-              completedSegments={completedSegments}
               segmentFills={segmentFills}
+              litStepCount={litStepCount}
             />
 
             <div className="grid grid-cols-1 gap-4 min-[1024px]:grid-cols-2 min-[1280px]:grid-cols-4 min-[1920px]:gap-8">

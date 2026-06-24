@@ -1,73 +1,90 @@
-# React + TypeScript + Vite
+# iVMS Marketing Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Official marketing site for **iVMS** (Innovative Vehicle Management Solutions) — the operating system for national mobility.
 
-Currently, two official plugins are available:
+The site presents iVMS as an AI fleet, automated enforcement, and integrated payments platform for governments and enterprise operators. It covers investment highlights, sovereign client references (RTA Dubai, ITC Abu Dhabi), product verticals (iTaxi, iBUS, iDeliver, SpeedSense, iPAY), platform capabilities, R&D, compliance, and deployment models aligned with national mobility strategy.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**Production domain:** [https://ivms.io](https://ivms.io)
 
-## React Compiler
+This is a single-page React application with scroll-driven sections, hero intro animation, and a responsive layout tuned for desktop (1920px design baseline) and smaller viewports.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech stack
 
-## Expanding the ESLint configuration
+| Layer | Technology |
+| --- | --- |
+| Framework | React 19 |
+| Language | TypeScript |
+| Build tool | Vite 8 |
+| Styling | Tailwind CSS 4 |
+| Animation | GSAP (ScrollTrigger), Framer Motion |
+| Linting | ESLint 10 |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Prerequisites
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Node.js** 20+ (LTS recommended)
+- **npm** 10+
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Local development
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# Install dependencies
+npm install
+
+# Start dev server (default http://localhost:5173)
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Production build
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+# Type-check and build static assets to dist/
+npm run build
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Preview production build locally
+npm run preview
 ```
+
+The `dist/` folder is ready to deploy to any static host (Vercel, Netlify, Cloudflare Pages, S3 + CDN, Nginx, etc.).
+
+## Project structure
+
+```
+src/
+  components/   # Layout, UI primitives, home page sections
+  context/      # Hero intro state
+  data/         # Copy, design tokens, section content
+  lib/          # Shared hooks and utilities
+  pages/        # Home page entry
+  styles/       # Global CSS (glass effects, fonts)
+public/
+  images/       # Optimized WebP/SVG assets
+  robots.txt    # Crawler rules
+  sitemap.xml   # Sitemap for https://ivms.io
+  llms.txt      # Summary for LLM crawlers
+  favicon.svg
+```
+
+## SEO & metadata
+
+Site metadata lives in `index.html` (title, description, Open Graph, Twitter cards, JSON-LD). Static files in `public/`:
+
+- `robots.txt` — search and AI crawler policy
+- `sitemap.xml` — canonical URL map
+- `llms.txt` — short summary for LLM crawlers (links to full detail)
+- `llms-full.txt` — extended structured site content for AI indexing
+- `site.webmanifest` — PWA manifest (theme, icons)
+
+## Environment notes
+
+- No backend or environment variables are required for the static site.
+- Update canonical URLs and social images in `index.html` if the domain or OG asset changes.
+- Social preview image: `public/og-image.webp` (1200×630).
+
+## Scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Development server with HMR |
+| `npm run build` | Production build |
+| `npm run preview` | Serve `dist/` locally |
+| `npm run lint` | Run ESLint |

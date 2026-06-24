@@ -21,25 +21,25 @@ export const HOW_IT_WORKS_STEPS: HowItWorksStep[] = [
     number: 1,
     title: 'Data Collection',
     description: 'Cameras, sensors, GPS, IoT devices, transactions',
-    image: '/images/how-it-works/step-1.png',
+    image: '/images/use-cases/urban-mobility.webp',
   },
   {
     number: 2,
     title: 'Analytics & AI',
     description: 'Real-time processing, pattern recognition, predictions',
-    image: '/images/how-it-works/step-2.png',
+    image: '/images/how-it-works/step-2.webp',
   },
   {
     number: 3,
     title: 'Actions',
     description: 'Automated enforcement, traffic signals, alerts',
-    image: '/images/how-it-works/step-3.png',
+    image: '/images/how-it-works/step-3.webp',
   },
   {
     number: 4,
     title: 'Reporting',
     description: 'Dashboards, compliance reports, stakeholder insights',
-    image: '/images/how-it-works/step-4.png',
+    image: '/images/how-it-works/step-4.webp',
   },
 ]
 

@@ -23,6 +23,8 @@ function buildSegmentFills(
   })
 }
 
+const PROGRESS_EPSILON = 1e-4
+
 function deriveStateFromProgress(progress: number, stepCount: number): HowItWorksScrollState {
   const segmentCount = stepCount - 1
   if (segmentCount <= 0) {
@@ -30,7 +32,7 @@ function deriveStateFromProgress(progress: number, stepCount: number): HowItWork
   }
 
   const scaled = Math.min(segmentCount, Math.max(0, progress * segmentCount))
-  const completedSegments = Math.floor(scaled)
+  const completedSegments = Math.min(segmentCount, Math.floor(scaled + PROGRESS_EPSILON))
   const segmentProgress = completedSegments >= segmentCount ? 1 : scaled - completedSegments
 
   return {
@@ -38,6 +40,19 @@ function deriveStateFromProgress(progress: number, stepCount: number): HowItWork
     segmentProgress,
     segmentFills: buildSegmentFills(completedSegments, segmentProgress, stepCount),
   }
+}
+
+function getLitStepCount(
+  completedSegments: number,
+  segmentProgress: number,
+  stepCount: number,
+): number {
+  const segmentCount = stepCount - 1
+  const baseCount = completedSegments + 1
+  const previewNext =
+    segmentProgress > PROGRESS_EPSILON && completedSegments < segmentCount ? 1 : 0
+
+  return Math.min(stepCount, baseCount + previewNext)
 }
 
 function prefersReducedMotion() {
@@ -112,6 +127,6 @@ export function useHowItWorksScroll({
   return {
     completedSegments: state.completedSegments,
     segmentFills: state.segmentFills,
-    litStepCount: state.completedSegments + 1,
+    litStepCount: getLitStepCount(state.completedSegments, state.segmentProgress, stepCount),
   }
 }

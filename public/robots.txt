@@ -1,0 +1,22 @@
+# https://ivms.io/
+# LLM summaries: https://ivms.io/llms.txt · https://ivms.io/llms-full.txt
+
+User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+Sitemap: https://ivms.io/sitemap.xml
